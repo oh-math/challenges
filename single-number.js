@@ -10,4 +10,4 @@ function singleNumber(nums) {
   }
 }
 
-console.log(singleNumber([4, 1, 2, 1, 2]));
+console.log(singleNumber([2, 1, 6, 1, 2]));
