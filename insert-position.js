@@ -4,14 +4,14 @@
  * @return {number}
  */
 var searchInsertPosition = function (nums, target) {
-  let resultIndex = undefined;
+  let resultIndex = null;
 
   nums.filter((num, index) => num === target && (resultIndex = index));
 
   if (!resultIndex) {
     const closestNum = closest(nums, target);
-    let indexOfClosest = undefined;
-    
+    let indexOfClosest = null;
+
     nums.filter((num, index) => num === closestNum && (indexOfClosest = index));
 
     if (target > closestNum) {
@@ -28,6 +28,12 @@ var searchInsertPosition = function (nums, target) {
   return resultIndex;
 };
 
+
+/**
+ * @param {number[]} arr
+ * @param {number} target
+ * @return {number}
+ */
 const closest = (arr, target) => {
   return arr.reduce((a, b) => {
     return Math.abs(b - target) < Math.abs(a - target) ? b : a;
